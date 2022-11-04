@@ -1,0 +1,403 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+
+
+:root{
+	--body-color:#ffffff ;
+	--body-color-alt:#e6e6ff ;
+	--primary-color: #5c4dfe;
+	--text-color:#000000 ;
+	--text-color-alt: #262626;
+}
+
+
+
+/*-------------- the dark mode color code -----------------*/
+
+
+.dark-mode{
+
+	--body-color:#00001a;
+	--body-color-alt:#000033;
+	--primary-color: #5c4dfe;
+	--text-color:#ffffff;
+	--text-color-alt: #e6e6e6;
+
+
+}
+
+
+body{
+	background: var(--body-color);
+}
+
+
+
+.navbar{
+	height: 60px;
+	background: var(--body-color);
+	line-height: 60px;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.navbar .logo{
+	color: var(--primary-color);
+	margin-left: 30px;
+	font-size: 22px;
+	font-weight: 600;
+}
+
+
+.navbar .logo span{
+	color: var(--text-color-alt);
+}
+
+
+.navbar nav ul li{
+	display: inline-block;
+	margin-right: 40px;
+}
+
+.navbar nav ul li a{
+	color: var(--text-color);
+	font-family: sans-serif;
+	cursor: pointer;
+	font-size: 17px;
+}
+
+
+header .icon{
+	color: var(--text-color);
+	cursor: pointer;
+}
+
+
+
+/*-----------the toggle icon visibilty style--------------*/
+
+header .fa-sun{
+	display: none;
+}
+
+
+.dark-mode header .fa-sun{
+	display: inline-block;
+} 
+
+
+.dark-mode header .fa-moon{
+	display: none;
+}
+
+
+
+/*--------------the mobile menu css start here --------*/
+
+.mobile-menu{
+	display: none;
+}
+
+
+@media (max-width: 756px){
+
+	.mobile-menu{
+	display: block;
+}
+
+
+	.navbar{
+		display: none;
+	}
+
+   .mobile-menu .mobile-nav{
+   	display: flex;
+   	justify-content: space-between;
+   	align-items: center;
+   	height: 60px;
+   }
+
+    .mobile-menu .logo{
+    	color: var(--primary-color);
+    	font-size: 20px;
+    	font-weight: 600;
+    	line-height: 60px;
+    	margin-left: 10px;
+    }
+
+
+     .mobile-menu .logo span{
+     	color: var(--text-color-alt);
+     }
+
+
+       .mobile-menu .menu-icon{
+       	color: var(--text-color);
+       	font-size: 26px;
+       	display: block;
+       	margin: 15px;
+       	cursor: pointer;
+       }
+
+        .mobile-menu #menuList{
+        	background: var(--body-color-alt);
+        	position: fixed;
+        	top: 0;
+        	left: 0;
+        	width: 0%;
+        	height: 100%;
+        	overflow-x: hidden;
+        	padding-top: 40px;
+        	transition: .5s;
+        	z-index: 100;
+        }
+
+        .mobile-menu #menuList ul{
+        	display: flex;
+        	flex-direction: column;
+        	width: 100%;
+        }
+
+
+         .mobile-menu #menuList ul li{
+         	padding: 20px;
+         }
+
+
+          .mobile-menu #menuList ul li a{
+          	color: var(--text-color);
+          	font-size: 17px;
+          	font-family: sans-serif;
+          }
+
+
+          .mobile-menu .close-icon{
+          	color: var(--text-color);
+          	font-size: 26px;
+          	position: absolute;
+          	top: 10px;
+          	right: 10px;
+          	cursor: pointer;
+          }
+
+
+
+
+
+}
+
+
+
+/*------------- the main css start here --------------------*/
+
+.main{
+	width: 95%;
+	height: cal(100vh - 60px);
+	margin: auto;
+	padding: 80px;
+
+}
+
+.main-content{
+	display: flex;
+}
+
+
+.main-content .text{
+	color: var(--text-color);
+	flex-basis: 60%;
+	margin-top: 50px;
+}
+
+.main-content .text h1{
+	font-size: 35px;
+	color: var(--text-color);
+	font-family: sans-serif;
+	padding-bottom: 15px;
+}
+
+
+
+.main-content .text h2{
+	font-size: 22px;
+	color: var(--text-color);
+	font-family: sans-serif;
+	opacity: .8;
+	padding-bottom: 10px;
+	font-weight: 500;
+}
+
+
+.main-content .text p{
+	font-size: 14px;
+	color: var(--text-color);
+	font-family: sans-serif;
+	opacity: .7;
+	padding-bottom: 20px;
+}
+
+
+.main-content .text .flexit{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+.main-content .flexit button{
+	padding: 10px;
+	width: 220px;
+	border: none;
+	background: var(--primary-color);
+	color: #fff;
+	font-size: 17px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+
+
+.main-content .flexit p {
+	color: var(--text-color);
+	margin-top: 50px;
+}
+
+
+
+.main-content .flexit p .play{
+	color: var(--primary-color);
+	min-width: 20px;
+}
+
+
+
+.main-content .image{
+	width: 100%;
+	position: relative;
+	margin-top: 40px;
+}
+
+.main-content .image img{
+	margin-top: -40px;
+	margin-left: 200px;
+	width: 550px;
+	z-index: 50;
+}
+
+
+.main-content .image::before{
+	content: '';
+	width: 223px;
+	height: 400px;
+	background: var(--primary-color);
+	position: absolute;
+	right: 0px;
+	display: block;
+	z-index: -1;
+	border-radius: 15px 50px;
+
+}
+
+
+.main-content .image .plus{
+	color: white;
+	position: absolute;
+	top: 10px;
+	right: 30px;
+	font-size: 20px;
+}
+
+/*------------ Media query for large screen 1150px ---------*/
+
+
+
+@media (max-width: 1150px){
+
+	.main-content .image img{
+	margin-top: -40px;
+	margin-left: 10px;
+	width: 550px;
+	z-index: 50;
+}
+
+
+}
+
+
+
+/*------------ Media query for mobile screen 756px ---------*/
+
+@media (max-width: 756px){
+	.main{
+		padding-top: 20px;
+
+	}
+
+	.main-content{
+		flex-direction: column;
+}
+
+
+	.main-content .text  h1{
+		font-size: 28px;
+	}
+
+
+		.main-content .text  h2{
+			font-size: 20px;
+		}
+
+
+		.main-content .text p{
+			font-size: 15px;
+		}
+
+
+		.main-content .text button{
+			width: 180px;
+			margin-top: 2px;
+		}
+
+
+
+		.main-content .image img{
+			margin-top: -40px;
+			margin-left: -12px;
+			width: 350px;
+		}
+
+		.main-content .image::before{
+			height: 300px;
+
+		}
+
+
+
+}
+
+
+
+
+/*-------- media query for the smaller mobile screen below 550px -----------*/
+
+@media (max-width: 756px){
+.main-content .image::before{
+	height: 250px;
+	right: -10px;
+}
+
+
+}
+
+
+@media (max-width:500px){
+	.main{
+	padding:20px;
+}
+}
